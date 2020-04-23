@@ -1,0 +1,19 @@
+request:
+  method: GET
+  url: /coreservice-service/entity1?filter=name%3DEntity11&startIndex=0&pageSize=1
+  body:
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    id: 1
+    name: Entity11
+  matchers:
+    body:
+      - path: $.id
+        type: by_regex
+        predefined: number
+      - path: $.name
+        type: by_regex
+        predefined: non_empty
